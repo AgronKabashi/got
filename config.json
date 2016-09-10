@@ -1,0 +1,42 @@
+{
+  "src": {
+    "folder": "src",
+    "entrypoint": "src/main.js",
+    "scripts": "src/**/*.js",
+    "css": "src/**/*.scss",
+    "markup": "src/**/*.html",
+    "static": [
+      "src/**/*.{ttf,woff,html,png,jpg,json}"
+    ]
+  },
+"build": {
+    "folder": "build",
+    "files": "build/**/*.{js,html,svg,css}",
+    "appFile": "main.js",
+    "vendorFile": "vendors.js"
+  },
+  "vendor": {
+    "staticFiles": [
+      "node_modules/reflect-metadata/Reflect.js",
+      "node_modules/zone.js/dist/zone.min.js"
+    ],
+    "requirables": [
+      "@angular/core",
+      "@angular/common",
+      "@angular/http",
+      "@angular/router",
+      "@angular/platform-browser",
+      "@angular/platform-browser-dynamic",
+      "rxjs/add/operator/toPromise"
+    ]
+  },
+  "browserify": {
+    "plugins": [
+      "angular2-annotations",
+      "transform-decorators-legacy",
+      "transform-class-properties",
+      "transform-flow-strip-types"
+    ],
+    "presets": ["es2015"]
+  }
+}
