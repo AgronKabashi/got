@@ -8,19 +8,27 @@ export class CharacterBioService {
     this.http = http;
   }
 
+  whenGetCharacterBio (characterName) {
+    return this.whenGetAllCharacterBios().then(characters => characters[characterName]);
+  }
+
   whenGetAllCharacterBios () {
+    if (this.characters) {
+      return Promise.resolve(this.characters);
+    }
+
     return this.http.get("got/data/bios.json")
       .toPromise()
       .then(response => {
         const data = response.json();
 
         // Massage data
-        const characters = data.reduce((result, character) => {
+        this.characters = data.reduce((result, character) => {
           result[character.name] = character;
           return result;
         }, {});
 
-        return characters;
+        return this.characters;
       });
   }
 }

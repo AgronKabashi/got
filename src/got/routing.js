@@ -9,6 +9,16 @@ export default RouterModule.forRoot([
   },
   {
     path: "season/:season/episode/:episode",
-    component: components.HomeComponent
+    component: components.HomeComponent,
+    children: [
+      {
+        path: "",
+        component: components.NoContentComponent
+      },
+      {
+        path: "bio/:characterName",
+        component: components.CharacterBioComponent
+      }
+    ]
   }
 ], {useHash: true});
