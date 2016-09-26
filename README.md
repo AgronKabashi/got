@@ -1,9 +1,12 @@
-# How to get started
+# Game of Thrones Workshop
+Also look at https://github.com/AgronKabashi/got-rollup if you are interested in a rollup solution instead.
+
+## How to get started
 - Install node.js
 - Run `npm install` in the project folder
 - Run `gulp` to host a web server with livereload
 
-# Tasks
+## Tasks
 The `default` task will transpile and/or copy the necessary files to the build folder. The various tasks have been split up into their own files to increase maintainability and scalability.
 
 - `clean` - removes the build folder
@@ -15,5 +18,5 @@ The `default` task will transpile and/or copy the necessary files to the build f
 - `watch` - Sets up watches to trigger livereload
 - `index` - simply a facade that exports all the tasks in the folder
 
-#Configuration
+## Configuration
 The file paths used in the various tasks can be configured through config.json
